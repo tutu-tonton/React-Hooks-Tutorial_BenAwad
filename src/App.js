@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+// カスタムフック
+import { useForm } from './hooks/useForm';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const [values, handleChange] = useForm({ email: '', password: '' });
+
+	return (
+		<div>
+			<label for="email">E-mail</label>
+			<input name="email" value={values.email} onChange={handleChange} />
+			<label for="password">Password</label>
+			<input type="password" name="password" value={values.password} onChange={handleChange} />
+		</div>
+	);
+};
 
 export default App;
