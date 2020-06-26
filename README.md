@@ -13,3 +13,8 @@
 - localStorageへの保存・取り出し
 - ?? / ||
 
+## 3.useCallback
+
+- 処理をキャッシュ化
+- 使い所： map内のコールバック => useCallback使ってキャッシュ化
+
